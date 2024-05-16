@@ -3,9 +3,54 @@
     align-items: center;
     justify-content: space-between;
     height: 100px;
+   
+    
   }
   
-
+  .searchContainer {
+    position: relative;
+  display: flex;
+  align-items: center;
+  background-color:#ddd ;/* Clear any background */
+  border-radius: 22px; /* Rounded corners for the search bar */
+  margin-right: auto;
+  margin-left: 30px;
+  margin-top: 5px;
+  height: 34px;
+  width: max-content;
+  padding-left: 10px;
+  padding-right: 3px;
+  }
+  
+  .searchInput {
+    flex: 1;
+    height: 36px; /* Ensure input height is sufficient */
+    padding: 0 12px; /* Adjusted padding for aesthetic */
+    font-size: 16px;
+    border: none; /* No borders inside */
+    outline: none; /* No outline */
+    color: #333; /* Text color */
+    background-color: transparent; /* Ensure input background matches the container */
+  }
+  
+  .searchButton {
+    padding: 10px; /* Adequate padding around the search icon */
+    margin-left: -10px; /* Negative margin to overlap with input field edge */
+    border: none;
+    background-color: transparent; /* Ensure button background matches the container */
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .searchButton svg {
+    height: 20px; /* Adjust icon size */
+    width: 20px;
+    color: #333; /* Icon color */
+  }
+  
+ 
+  
+  
   
   .logo {
     
