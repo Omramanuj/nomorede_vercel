@@ -1,6 +1,8 @@
 .container {
     flex: 2;
     margin-top: 60px;
+    padding-left: 30px;
+    border-left: 1px solid var(--softBg);
   }
   
   .subtitle {
