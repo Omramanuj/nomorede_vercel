@@ -22,9 +22,9 @@ a {
 }
 
 .dark {
-  --bg: #0f172a;
+  --bg: #000000;
   --textColor: #ddd;
-  --softBg: #1f273a;
+  --softBg: #505050;
   --softTextColor: #a6a6a6;
 }
 
@@ -45,8 +45,8 @@ a {
   max-width: 1536px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 @media screen and (max-width: 1536px) {

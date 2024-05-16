@@ -4,7 +4,7 @@ import Image from "next/image";
 export const Featured = () => {
   return (
     <div className={styles.container}>
-    <h1 className={styles.title}>
+    {/* <h1 className={styles.title}>
       <b>Hey, Sartorialist!</b> Discover different Fashion and trends.
     </h1>
     <div className={styles.post}>
@@ -21,7 +21,7 @@ export const Featured = () => {
         </p>
         <button className={styles.button}>Read More</button>
       </div>
-    </div>
+    </div> */}
   </div>
   )
 }
