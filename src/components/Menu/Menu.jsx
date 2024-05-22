@@ -1,11 +1,7 @@
 import React from 'react'
 import styles from './menu.module.css'
-import Link from "next/link";
-import Image from "next/image";
 import { MenuPosts } from '../menuPosts/MenuPosts';
 import { MenuCategories } from '../menuCategories/MenuCategories';
-import { Category } from '@mui/icons-material';
-import { CategoryList } from '../categoryList/CategoryList';
 export const Menu = () => {
   return (
     <div className={styles.container}>
