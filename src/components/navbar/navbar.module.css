@@ -1,104 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100px;
-    position: sticky;
-    top:0;
-     background-color: var(--bg);
-     opacity: 92%;
-     z-index: 1;
-    
-  }
-  
-  .searchContainer {
-    position: relative;
   display: flex;
   align-items: center;
-  background-color:#ddd ;/* Clear any background */
-  border-radius: 22px; /* Rounded corners for the search bar */
+  justify-content: space-between;
+  height: 80px; /* Slightly reduced height for better responsiveness */
+  position: sticky;
+  top: 0;
+  background-color: var(--bg);
+  opacity: 92%;
+  z-index: 1;
+  padding: 0 20px;
+}
+
+.logo {
+  text-align: center;
+  font-size: 28px; /* Adjusted font size for better responsiveness */
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.searchContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #ddd;
+  border-radius: 22px;
   margin-right: auto;
-  margin-left: 30px;
+  margin-left: 20px;
   margin-top: 5px;
   height: 34px;
-  width: max-content;
+  width: 100%; /* Make it flexible */
+  max-width: 300px; /* Set a maximum width */
   padding-left: 10px;
   padding-right: 3px;
-  }
-  
-  .searchInput {
-    flex: 1;
-    height: 36px; /* Ensure input height is sufficient */
-    padding: 0 12px; /* Adjusted padding for aesthetic */
-    font-size: 16px;
-    border: none; /* No borders inside */
-    outline: none; /* No outline */
-    color: #333; /* Text color */
-    background-color: transparent; /* Ensure input background matches the container */
-  }
-  
-  .searchButton {
-    padding: 10px; /* Adequate padding around the search icon */
-    margin-left: -10px; /* Negative margin to overlap with input field edge */
-    border: none;
-    background-color: transparent; /* Ensure button background matches the container */
-    cursor: pointer;
-    outline: none;
-  }
-  
-  .searchButton svg {
-    height: 20px; /* Adjust icon size */
-    width: 20px;
-    color: #333; /* Icon color */
-  }
-  
- 
-  
-  
-  
+}
+
+.searchInput {
+  flex: 1;
+  height: 100%;
+  padding: 0 12px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #333;
+  background-color: transparent;
+}
+
+.searchButton {
+  display: none; /* Hide search button by default */
+}
+
+.searchIcon {
+  height: 20px;
+  width: 20px;
+  color: #333;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 16px; /* Adjusted font size for better responsiveness */
+}
+
+.themeToggle {
+  margin-left: 10px; /* Added margin to separate the theme toggle button */
+}
+
+/* Media queries for responsiveness */
+
+@media screen and (max-width: 1280px) {
   .logo {
-    
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
+    font-size: 26px; /* Adjusted font size for responsiveness */
   }
-  
   .links {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-   
-    font-size: 20px;
+    font-size: 14px; /* Adjusted font size for responsiveness */
+    gap: 15px;
   }
-  
-  @media screen and (max-width: 1280px) {
-    .logo {
-      font-size: 32px;
-    }
-    .links {
-      font-size: 18px;
-      gap: 15px;
-    }
+  .searchContainer {
+    max-width: 250px;
+    margin-right: 20px; /* Adjusted width for smaller screens */
   }
-  @media screen and (max-width: 1024px) {
-    .social {
-      display: none;
-    }
-    .logo {
-      text-align: left;
-    }
+}
+
+@media screen and (max-width: 1024px) {
+  .logo {
+    font-size: 24px; /* Adjusted font size for responsiveness */
+    text-align: left;
   }
-  @media screen and (max-width: 768px) {
-    .logo {
-      font-size: 24px;
-    }
+  .searchContainer {
+    max-width: 200px;
+    margin-right: 20px; /* Adjusted width for smaller screens */
   }
-  @media screen and (max-width: 640px) {
-    .links{
-      justify-content: flex-end;
-    }
-    .link {
-      display: none;
-    }
+  .links {
+    gap: 15px; /* Adjust gap for better spacing */
   }
-  
+}
+
+@media screen and (max-width: 929px) {
+  .logo {
+    font-size: 22px; /* Adjusted font size for responsiveness */
+    margin-right: 10px;
+    margin-left: -10px;
+  }
+  .searchContainer {
+    max-width: 180px; /* Adjusted width for smaller screens */
+    margin-left: 10px;
+    margin-right: 20px;
+  }
+  .joinButton {
+    display: none; /* Hide join button on smaller screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    font-size: 20px; /* Adjusted font size for responsiveness */
+    margin-right: 10px;
+    margin-left: -60px;
+  }
+  .searchContainer {
+    max-width: 150px; /* Adjusted width for smaller screens */
+    margin-left: 10px;
+    margin-right: 20px;
+  }
+  .searchButton {
+    display: none; /* Hide search button on smaller screens */
+  }
+}
+
+@media screen and (max-width: 647px) {
+  .logo {
+    font-size: 18px; /* Adjusted font size for responsiveness */
+    margin-right: 10px;
+    margin-left: -20px;
+  }
+  .searchContainer {
+    max-width: 140px; /* Adjusted width for 647px screens */
+    margin-left: 5px;
+  }
+  .links {
+    justify-content: flex-end;
+  }
+  .link, .joinButton {
+    display: none;
+  }
+  .themeToggle {
+    margin-left: 10px; /* Ensure spacing on smaller screens */
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .links {
+    justify-content: flex-end;
+  }
+  .link, .joinButton {
+    display: none;
+  }
+  .searchContainer {
+    margin-left: 5px;
+    max-width: 120px; /* Adjusted width for smaller screens */
+  }
+  .themeToggle {
+    margin-left: 10px; /* Ensure spacing on smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .searchContainer {
+    max-width: 100px; /* Adjusted width for very small screens */
+    margin-right: 15px;
+  }
+  .themeToggle {
+    margin-left: 5px; /* Ensure spacing on very small screens */
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .logo {
+    font-size: 16px; /* Further adjusted font size for very small screens */
+    margin-right: 5px;
+  }
+  .searchContainer {
+    max-width: 90px; /* Further adjusted width for very small screens */
+    margin-right: 15px;
+  }
+  .themeToggle {
+    margin-left: 10px; /* Ensure spacing on very small screens */
+  }
+}

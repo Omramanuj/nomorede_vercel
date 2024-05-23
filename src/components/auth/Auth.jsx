@@ -3,15 +3,8 @@
 import React from "react";
 import styles from "./auth.module.css";
 import Image from "next/image";
-import { useState } from "react";
 
 const Auth = () => {
-  const [isSignUp, setIsSignUp] = useState(false);
-
-  const toggleForm = () => {
-    setIsSignUp(!isSignUp);
-  };
-
   return (
     <div className={styles.container}>
       <div className={`${styles.section} ${styles.yesterday}`}>
@@ -50,25 +43,16 @@ const Auth = () => {
           styles every day.
         </p>
         <form className={styles.form}>
-          {isSignUp && (
-            <input type="text" placeholder="Name" className={styles.input} />
-          )}
-          <input type="email" placeholder="Email" className={styles.input} />
-          <input
-            type="password"
-            placeholder="Password"
+          <input type="text" placeholder="Name" className={styles.input} />
+          <input type="text" placeholder="Mobile" className={styles.input} />
+          <textarea
+            placeholder="Description"
             className={styles.input}
+            rows="4"
           />
           <div className={styles.buttonContainer}>
             <button type="submit" className={styles.button}>
-              {isSignUp ? "Sign Up" : "Login"}
-            </button>
-            <button
-              type="button"
-              className={styles.button}
-              onClick={toggleForm}
-            >
-              {isSignUp ? "Back to Login" : "Sign Up"}
+              Join Waitlist
             </button>
           </div>
         </form>

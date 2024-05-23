@@ -1,12 +1,10 @@
-/* auth.module.css */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 20px;
   height: 100vh;
   background-color: var(--bg);
   color: var(--textColor);
@@ -14,7 +12,8 @@
 }
 
 .section {
-  flex: 1;
+  width: 100%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,14 +33,6 @@
   animation: moveOutHeaders 10s 1s infinite;
 }
 
-.headerYesterday {
-  animation-delay: 0.5s; /* Reduced delay for the "Yesterday" section */
-}
-
-.headerTomorrow {
-  animation-delay: 0.5s; /* Reduced delay for the "Tomorrow" section */
-}
-
 .headerToday {
   font-size: 36px;
   font-weight: 700;
@@ -53,7 +44,6 @@
   font-size: 18px;
   margin-bottom: 30px;
   line-height: 1.6;
-  max-width: 400px;
   color: var(--softTextColor);
 }
 
@@ -98,14 +88,6 @@
   margin-top: 20px;
   border-radius: 5px; /* Optional: if you want rounded corners */
   animation: moveOutProfile 10s 1s infinite;
-}
-
-.profileContainer:nth-child(1) {
-  animation-delay: 1.75s; /* Sync with first image */
-}
-
-.profileContainer:nth-child(2) {
-  animation-delay: 2.25s; /* Sync with second image */
 }
 
 .avatar {
@@ -171,6 +153,7 @@
 }
 
 .form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -193,7 +176,7 @@
 
 .buttonContainer {
   display: flex;
-  gap: 10px;
+  justify-content: center;
   margin-top: 10px;
 }
 
@@ -211,4 +194,58 @@
 
 .button:hover {
   background-color: #cc0000;
+}
+
+@media (max-width: 768px) {
+  .headerYesterday, .headerTomorrow, .imageContainer, .profileContainer {
+    display: none; /* Hide these sections on smaller screens */
+  }
+
+  .container {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .section {
+    max-width: 100%; /* Make the middle section take full width */
+  }
+
+  .headerToday {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerToday {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .input {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
