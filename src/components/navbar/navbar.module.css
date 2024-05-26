@@ -14,10 +14,11 @@
 }
 
 .logo {
+  font-family: 'Playfair Display', serif;
   text-align: center;
-  font-size: 28px; /* Adjusted font size for better responsiveness */
+  font-size: 35px; /* Adjusted font size for better responsiveness */
   font-weight: bold;
-  margin-right: 20px;
+  margin-right: 17px;
 }
 
 .searchContainer {

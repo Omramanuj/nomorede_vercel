@@ -12,7 +12,7 @@ export const CardList = () => {
       <Card />
       
     </div>
-    <Pagination />
+   
   </div>
   
   )

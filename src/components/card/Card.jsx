@@ -11,7 +11,7 @@ export const Card = () => {
           <div className={styles.userInfo}>
             <h2 className={styles.name}>Anastasiia Mls</h2>
             <p className={styles.username}>
-              @mls - <Link href="/">follow</Link>{" "}
+              @mls - <Link href="/">follow</Link>{" "}W
             </p>
           </div>
         </div>
@@ -22,7 +22,7 @@ export const Card = () => {
          
         </p>
         <div className={styles.imageContainer}>
-          <Image src="/wid.webp" alt="" fill className={styles.image} />
+          <Image src="/try3.png" alt="" fill className={styles.image} />
         </div>
         <div className={styles.foot}>
           {" "}

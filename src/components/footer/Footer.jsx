@@ -11,10 +11,8 @@ export const Footer = () => {
         <h1 className={styles.logoText}>Nomorede</h1>
       </div>
       <p className={styles.desc}>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim
-        necessitatibus similique aspernatur obcaecati veritatis. Aperiam cum
-        porro sequi, totam minima consequuntur, aspernatur deleniti vero
-        repellendus dorales.
+      Discover the confidence that comes from embracing your unique style. Let our expert stylists guide you from head-to-toe through the world of science.
+Say goodbye to "de-brands" and hello to "YOU".
       </p>
       <div className={styles.icons}>
         <Image src="/facebook.png" alt="" width={18} height={18} />

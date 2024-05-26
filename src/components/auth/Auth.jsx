@@ -12,7 +12,7 @@ const Auth = () => {
         <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>
             <Image
-              src="/coding.png"
+              src="/try8.png"
               alt="Worlds"
               layout="fill"
               objectFit="cover"
@@ -21,7 +21,7 @@ const Auth = () => {
           </div>
           <div className={styles.imageWrapper}>
             <Image
-              src="/travel.png"
+              src="/try5.png"
               alt="Another image"
               layout="fill"
               objectFit="cover"
@@ -62,7 +62,7 @@ const Auth = () => {
         <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>
             <Image
-              src="/food.png"
+              src="/px.jpg"
               alt="Mercury OS"
               layout="fill"
               objectFit="cover"
@@ -71,7 +71,7 @@ const Auth = () => {
           </div>
           <div className={styles.imageWrapper}>
             <Image
-              src="/p1.jpeg"
+              src="/try4.png"
               alt="Another image"
               layout="fill"
               objectFit="cover"
