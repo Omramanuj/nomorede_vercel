@@ -1,7 +1,277 @@
-.container{
-    flex:5
+.container {
+  flex: 5;
+  margin-bottom: 250px; /* Adjust margin to prevent overlap with the footer */
+  padding: 0 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin: 50px 0;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin-right: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--textColor);
+  cursor: pointer;
+  position: relative;
+}
+
+.title::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--textColor);
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.title:hover::after,
+.title.active::after {
+  width: 100%;
+}
+
+.design {
+  width: 105%;
+  height:18%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  margin-left: -20px;
+  flex-wrap: wrap;
+}
+
+.post {
+  flex: 1 1 calc(33.333% - 20px);
+  color: var(--textColor);
+  background-color: #e4ccff;
+  border-radius: 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.text {
+  font-size: 18px;
+  color: white;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: var(--softTextColor);
+}
+
+.howWeWork {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.howWeWorkTitle {
+  font-size: 30px;
+  font-family: 'Georgia', serif;
+  margin-bottom: 20px;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.step {
+  flex: 1 1 calc(33.333% - 20px);
+  background-color: var(--softBg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+}
+
+.stepNumber {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.stepText {
+  font-size: 16px;
+  color: var(--textColor);
+}
+
+.testimonialImageContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.testimonialImage {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.promoSection {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.promoText {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--textColor);
+}
+
+.promoSubtext {
+  font-size: 20px;
+  color: var(--softTextColor);
+  margin-top: 10px;
+}
+
+.brandImageContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.brandImage {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 20px;
+    margin-right: 20px;
   }
-  
-  .title{
-    margin: 50px 0px;
+
+  .post {
+    padding: 20px;
   }
+
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 18px;
+    margin-right: 15px;
+  }
+
+  .design {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .post {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  .post {
+    width: 100%;
+  }
+
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .testimonialImage {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .brandImage {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 430px) {
+  .title {
+    font-size: 14px;
+    margin-right: 8px;
+  }
+
+  .post {
+    height: auto;
+  }
+  .design{
+    display: block;
+    
+  }
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .testimonialImage {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .brandImage {
+    width: 100%;
+    max-width: 100%;
+  }
+}
