@@ -1,9 +1,17 @@
-import Auth from '@/components/auth/auth'
+
+import Auth from '@/components/auth/Auth'
 import React from 'react'
+
+import WaitListFooter from '@/components/waitListFooter/waitListFooter'
 
 const page = () => {
   return (
-    <div> <Auth/></div>
+    <>
+    <div className='flex flex-col h-[100vh] justify-between flex-1'>
+       <Auth/>
+        <WaitListFooter/>
+    </div>
+    </>
   )
 }
 

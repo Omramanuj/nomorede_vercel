@@ -7,83 +7,178 @@ import Image from "next/image";
 const Auth = () => {
   return (
     <div className={styles.container}>
-      <div className={`${styles.section} ${styles.yesterday}`}>
-        <h2 className={styles.headerYesterday}>Yesterday</h2>
-        <div className={styles.imageContainer}>
-          <div className={styles.imageWrapper}>
-            <Image
-              src="/try8.png"
-              alt="Worlds"
-              layout="fill"
-              objectFit="cover"
-              className={styles.image}
-            />
+      <div className={`${styles.section} `}>
+        <div className={styles.yesterday}>
+          <div className={styles.imageContainer}>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/right/lleft.png"
+                alt="Mercury OS"
+                layout="fill"
+                objectFit="cover"
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/right/Right1.jpeg"
+                alt="Another image"
+                layout="fill"
+                objectFit="cover"
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/right/Right2.jpeg"
+                alt="Another image"
+                layout="fill"
+                objectFit="cover"
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/right/Right3.jpeg"
+                alt="Another image"
+                layout="fill"
+                objectFit="cover"
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/right/Right4.jpeg"
+                alt="Another image"
+                layout="fill"
+                objectFit="cover"
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/right/Right7.jpeg"
+                alt="Another image"
+                layout="fill"
+                objectFit="cover"
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/right/Right5.jpeg"
+                alt="Another image"
+                layout="fill"
+                objectFit="cover"
+                className={styles.image}
+              />
+            </div>
           </div>
-          <div className={styles.imageWrapper}>
-            <Image
-              src="/try5.png"
-              alt="Another image"
-              layout="fill"
-              objectFit="cover"
-              className={styles.image}
-            />
-          </div>
-        </div>
-        <div className={styles.profileContainer}>
-          <img src="/pr.webp" alt="Profile" className={styles.avatar} />
-          <div className={styles.userInfo}>
-            <h2 className={styles.name}>Anastasiia Mls</h2>
-          </div>
+          <h2 className={styles.headerYesterday}>After</h2>
+          {/* <div className={styles.profileContainer}>
+            <img src="/pr.webp" alt="Profile" className={styles.avatar} />
+            <div className={styles.userInfo}>
+              <h2 className={styles.name}>Anastasiia Mls</h2>
+            </div>
+          </div> */}
         </div>
       </div>
-      <div className={styles.section}>
-        <h2 className={styles.headerToday}>Nomorede</h2>
+   
+        <div className={styles.midSection}>
+        <h2 className={styles.headerToday}>join our waitlist</h2>
         <p className={styles.description}>
-          Join a new fashion community. Connect, share, and celebrate the best
-          styles every day.
+          Our analysis will help you to manage your fashion looks better and we
+          will provide the best sutaible products for you .
         </p>
         <form className={styles.form}>
-          <input type="text" placeholder="Name" className={styles.input} />
-          <input type="text" placeholder="Mobile" className={styles.input} />
-          <textarea
-            placeholder="Description"
+          <input
+            placeholder="Enter Your Email"
             className={styles.input}
             rows="4"
           />
           <div className={styles.buttonContainer}>
             <button type="submit" className={styles.button}>
-              Join Waitlist
+              Join our waitlist
             </button>
           </div>
         </form>
-      </div>
-      <div className={`${styles.section} ${styles.tomorrow}`}>
-        <h2 className={styles.headerTomorrow}>Tomorrow</h2>
-        <div className={styles.imageContainer}>
-          <div className={styles.imageWrapper}>
-            <Image
-              src="/px.jpg"
-              alt="Mercury OS"
-              layout="fill"
-              objectFit="cover"
-              className={styles.image}
-            />
-          </div>
-          <div className={styles.imageWrapper}>
-            <Image
-              src="/try4.png"
-              alt="Another image"
-              layout="fill"
-              objectFit="cover"
-              className={styles.image}
-            />
-          </div>
         </div>
-        <div className={styles.profileContainer}>
+
+      <div className={`${styles.section} `}>
+        <div className={styles.tomorrow}>
+          <div className={styles.imageContainer}>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/left/Lefrt2.jpeg"
+                alt="Worlds"
+                layout="fill"
+                objectFit="cover"
+                className={styles.image}
+              />
+            </div>
+
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/left/left.png"
+                alt="Another image"
+                layout="fill"
+                objectFit="cover"
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/left/left(1).png"
+                alt="Another image"
+                layout="fill"
+                objectFit="cover"
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/left/Left1.jpeg"
+                alt="Another image"
+                layout="fill"
+                objectFit="cover"
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/left/left4.jpeg"
+                alt="Another image"
+                layout="fill"
+                objectFit="cover"
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/left/left3.jpeg"
+                alt="Another image"
+                layout="fill"
+                objectFit="cover"
+                className={styles.image}
+              />
+            </div>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/left/left5.jpeg"
+                alt="Another image"
+                layout="fill"
+                objectFit="cover"
+                className={styles.image}
+              />
+            </div>
+          </div>
+          <h2 className={styles.headerTomorrow}>Before</h2>
+          {/* <div className={styles.profileContainer}>
           <img src="/pr.webp" alt="Profile" className={styles.avatar} />
           <div className={styles.userInfo}>
             <h2 className={styles.name}>Anastasiia Mls</h2>
           </div>
+        </div> */}
         </div>
       </div>
     </div>

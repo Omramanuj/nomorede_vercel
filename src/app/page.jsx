@@ -4,6 +4,7 @@ import React from "react";
 import { CategoryList } from "@/components/categoryList/CategoryList";
 import { CardList } from "@/components/cardList/CardList";
 import { Menu } from "@/components/Menu/Menu";
+import { Footer } from "@/components/footer/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
           <Menu />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

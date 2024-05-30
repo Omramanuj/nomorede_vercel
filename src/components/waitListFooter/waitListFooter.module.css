@@ -1,0 +1,43 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--bg);
+    z-index: 100;
+  }
+  
+  .text {
+    color: var(--softTextColor);
+    font-size: 0.875rem;
+    margin-right: 20%;
+    padding: 0.5rem 0.5rem;
+  }
+  
+  .social {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .button {
+    font-size: 1rem;
+    margin-right: 2%;
+    border-color: var(--textColor);
+    background-color: var(--bg);
+    opacity: 0.8;
+    color: var(--softTextColor);
+    padding: 0.5rem 0.5rem;
+    border-radius: 9999px;
+    transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+  }
+  
+  .button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: var(--textColor);
+    opacity: 1;
+  }
+  
+  .button:active {
+    transform: scale(0.95);
+  }
+  
