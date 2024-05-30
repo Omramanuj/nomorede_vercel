@@ -9,15 +9,18 @@ import { Footer } from "@/components/footer/Footer";
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Featured />
-      <CategoryList />
       <div className={styles.midSection}>
         <div className={styles.content}>
-          <CardList />
+          <div className={styles.left}>
+            <Featured />
+            <CategoryList />
+            <CardList />
+          </div>
+
           <Menu />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -176,6 +176,16 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+@media screen and (max-width: 1180px) {
+  .design {
+    flex-direction: column;
+    
+    height: 25%;
+    align-items: center;
+  }
+}
+
+
 @media screen and (max-width: 1024px) {
   .title {
     font-size: 20px;
@@ -197,6 +207,8 @@
   }
 }
 
+
+
 @media screen and (max-width: 768px) {
   .title {
     font-size: 18px;
@@ -205,6 +217,8 @@
 
   .design {
     flex-direction: column;
+    
+    height: 25%;
     align-items: center;
   }
 

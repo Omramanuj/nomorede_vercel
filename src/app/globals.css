@@ -61,12 +61,12 @@ a {
 }
 @media screen and (max-width: 1280px) {
   .wrapper {
-    max-width: 1024px;
+    max-width: 1280px;
   }
 }
 @media screen and (max-width: 1024px) {
   .wrapper {
-    max-width: 768px;
+    max-width: 800px;
     padding-left: 40px;
     padding-right: 40px;
   }
