@@ -23,11 +23,11 @@ export const Navbar = () => {
         <Link href="/" className={styles.link}>
           Homepage
         </Link>
-        <Link href="/contact" className={styles.link}>
+        <Link href="/contactUs" className={styles.link}>
           Contact
         </Link>
-        <Link href="/about" className={styles.link}>
-          About
+        <Link href="/LogIn" className={styles.link}>
+          LogIn
         </Link>
         <AuthLinks />
       </div>

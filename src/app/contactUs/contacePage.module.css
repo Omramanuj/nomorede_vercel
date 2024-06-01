@@ -1,0 +1,12 @@
+
+.contactPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .contactPage hr {
+    width: 100%;
+    margin: 20px 0;
+  }

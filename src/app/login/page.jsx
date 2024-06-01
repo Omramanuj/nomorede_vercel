@@ -1,18 +1,13 @@
-
-import Auth from '@/components/auth/Auth'
+import Authentication from '@/components/signUpLogin/SingUpLogin'
 import React from 'react'
+import styles from "./loginPage.module.css"
 
-import WaitListFooter from '@/components/waitListFooter/waitListFooter'
-
-const page = () => {
+export default function page() {
   return (
-    <>
-    <div className='flex flex-col h-[100vh] justify-between flex-1'>
-       <Auth/>
-        <WaitListFooter/>
+  
+    <div className={styles.container}>
+        <Authentication />
     </div>
-    </>
+
   )
 }
-
-export default page

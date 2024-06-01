@@ -12,7 +12,7 @@ export const AuthLinks = () => {
     return (
         <div className={styles.container}>
             {status === 'notauthenticated' ? (
-                <Link href="/login">
+                <Link href="/joinWaitlist">
                     <button className={`${styles.joinButton} joinButton`}>
                         + Join Waitlist
                     </button>
