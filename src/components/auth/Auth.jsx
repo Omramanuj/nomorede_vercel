@@ -102,7 +102,7 @@ const MidSection = ({ email, setEmail, handleSubmit, message }) => (
   <div className={styles.midSection}>
     <h2 className={styles.headerToday}>Join our waitlist</h2>
     <p className={styles.description}>
-      Our analysis will help you manage your fashion looks better, and we will provide the best suitable products for you.
+      Our analysis will help you manage your fashion looks better, and we will provide the best suitable products for you. Signup for Early-Bird discounts and create your own science-backed style!
     </p>
     <form className={styles.form} onSubmit={handleSubmit}>
       <input

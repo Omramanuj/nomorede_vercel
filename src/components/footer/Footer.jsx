@@ -7,7 +7,7 @@ export const Footer = () => {
     <div className={styles.container}>
     <div className={styles.info}>
       <div className={styles.logo}>
-        <Image src="/logo.png" alt="lama blog" width={50} height={50} />
+        <Image src="/Nomorede_transparent.png" alt="lama blog" width={70} height={70} />
         <h1 className={styles.logoText}>Nomorede</h1>
       </div>
       <p className={styles.desc}>
