@@ -1,7 +1,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 300px;
+
+  width: 400px;
   margin: auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -48,9 +49,17 @@
   width: 100%;
 }
 
+.buttonContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 .container button {
   padding: 10px 15px;
   border: none;
+  width:70%;
   border-radius: 3px;
   background-color: red; /* Red color for the button */
   color: #fff;
@@ -64,16 +73,17 @@
 .toggle {
   margin-top: 10px;
   text-align: center;
-  cursor: pointer;
+  cursor: initial;
 }
 
-.name {
+.link {
   margin-top: 5px;
   text-align: center;
   cursor: pointer;
 }
 
-.name:hover {
+.link:hover {
   color: var(--softTextColor);
   text-decoration: underline;
 }
+

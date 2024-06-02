@@ -183,12 +183,15 @@ const Authentication = () => {
             required
           />
         </div>
+        <div className={styles.buttonContainer}>
         <button type="submit" className={styles.button}>
           {isLoginForm ? 'Login' : 'Sign Up'}
         </button>
+        </div>
       </form>
       <p className={styles.toggle}>
         {isLoginForm ? "Don't have an account?" : "Already have an account?"}
+        <br />
         <span className={styles.link} onClick={handleToggleForm}>
           {isLoginForm ? 'Sign up here' : 'Log in here'}
         </span>
