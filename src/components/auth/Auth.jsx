@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from './auth.module.css';
 import { ToastContainer, toast } from 'react-toastify';
-
+import 'react-toastify/dist/ReactToastify.css';
 const imagesRight = [
   { src: '/right/lleft.png', alt: 'Mercury OS' },
   { src: '/right/Right1.jpeg', alt: 'Another image' },
@@ -57,7 +57,7 @@ const Auth = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email ,name:null, mobile:null}),
       });
 
       if (response.ok) {
@@ -86,7 +86,7 @@ const Auth = () => {
         message={message}
       />
       <Section images={imagesLeft} headerText="Before" headerClass={styles.headerTomorrow} />
-      {/* <ToastContainer /> */}
+      <ToastContainer />
     </div>
   );
 };
@@ -117,7 +117,7 @@ const MidSection = ({ email, setEmail, handleSubmit, message }) => (
         <button type="submit" className={styles.button}>Join our waitlist</button>
       </div>
     </form>
-    {message && <p className={styles.message}>{message}</p>}
+    {/* {message && <p className={styles.message}>{message}</p>} */}
   </div>
 );
 

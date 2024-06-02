@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request) {
   try {
-    const { email } = await request.json();
+    const {name,email,message } = await request.json();
 
     if (!email || !email.includes('@')) {
       return NextResponse.json({ message: 'Invalid email address' }, { status: 400 });
@@ -13,7 +13,7 @@ export async function POST(request) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ name,email,message }),
     });
 
     if (!response.ok) {

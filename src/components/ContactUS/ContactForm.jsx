@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import styles from './Contact.module.css';
-import axios from 'axios';
+import { toast,ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
@@ -11,16 +12,38 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await axios.post('/api/contact', { name, email, message });
-      // Handle success (e.g., show a success message)
-    } catch (error) {
-      // Handle error (e.g., show an error message)
+    try{
+      const response = await fetch('/api/join-waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      })
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log(result.message);
+        toast.success("you have been heard! We will get back to you soon.");
+        setName('');
+        setEmail('');
+        setMessage('');
+      } else {
+        const error = await response.json();
+        console.log(error.message);
+        toast.error(error.message);
+      }
+    }
+
+    catch (error){
+      console.error('Error:', error);
+      toast.error('There was an error joining the waitlist. Please try again.');
     }
   };
 
   return (
     <div className={styles.contactContainer}>
+      <ToastContainer />
       <div className={styles.contactInfo}>
         <h3>Contact Us</h3>
         <p>Need to get in touch with our team?</p>
@@ -63,6 +86,7 @@ export default function ContactForm() {
         </div>
         <button type="submit">Submit</button>
       </form>
+
     </div>
   );
 }
