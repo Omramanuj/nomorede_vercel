@@ -38,14 +38,14 @@
 
 .headerToday {
   font-size: 36px;
-  font-weight: 200;
+  font-weight: 300;
   margin-bottom: 20px;
   color: var(--softTextColor);
 }
 
 .description {
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 30px;
   line-height: 1.6;
   color: var(--softTextColor);
