@@ -1,28 +1,30 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import styles from './auth.module.css';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useState } from "react";
+import Image from "next/image";
+import styles from "./auth.module.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
 const imagesRight = [
-  { src: '/right/lleft.png', alt: 'Mercury OS' },
-  { src: '/right/Right1.jpeg', alt: 'Another image' },
-  { src: '/right/Right2.jpeg', alt: 'Another image' },
-  { src: '/right/Right3.jpeg', alt: 'Another image' },
-  { src: '/right/Right4.jpeg', alt: 'Another image' },
-  { src: '/right/Right7.jpeg', alt: 'Another image' },
-  { src: '/right/Right5.jpeg', alt: 'Another image' },
+  { src: "/right/lleft.png", alt: "Mercury OS" },
+  { src: "/right/Right1.jpeg", alt: "Another image" },
+  { src: "/right/Right2.jpeg", alt: "Another image" },
+  { src: "/right/Right3.jpeg", alt: "Another image" },
+  { src: "/right/Right4.jpeg", alt: "Another image" },
+  { src: "/right/Right7.jpeg", alt: "Another image" },
+  { src: "/right/Right5.jpeg", alt: "Another image" },
 ];
 
 const imagesLeft = [
-  { src: '/left/Lefrt2.jpeg', alt: 'Worlds' },
-  { src: '/left/left.png', alt: 'Another image' },
-  { src: '/left/left(1).png', alt: 'Another image' },
-  { src: '/left/Left1.jpeg', alt: 'Another image' },
-  { src: '/left/left4.jpeg', alt: 'Another image' },
-  { src: '/left/left3.jpeg', alt: 'Another image' },
-  { src: '/left/left5.jpeg', alt: 'Another image' },
+  { src: "/left/Lefrt2.jpeg", alt: "Worlds" },
+  { src: "/left/left.png", alt: "Another image" },
+  { src: "/left/left(1).png", alt: "Another image" },
+  { src: "/left/Left1.jpeg", alt: "Another image" },
+  { src: "/left/left4.jpeg", alt: "Another image" },
+  { src: "/left/left3.jpeg", alt: "Another image" },
+  { src: "/left/left5.jpeg", alt: "Another image" },
 ];
 
 const ImageList = ({ images }) => (
@@ -46,24 +48,25 @@ const ImageList = ({ images }) => (
 );
 
 const Auth = () => {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('/api/join-waitlist', {
-        method: 'POST',
+      const response = await fetch("/api/join-waitlist", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email ,name:null, mobile:null}),
+        body: JSON.stringify({ email, name: null, mobile: null }),
       });
 
       if (response.ok) {
         const result = await response.json();
+        console.log(result);
         setMessage(result.message);
-        setEmail(''); // Clear the input field
+        setEmail("");
         toast.success(result.message);
       } else {
         const error = await response.json();
@@ -71,21 +74,29 @@ const Auth = () => {
         toast.error(error.message);
       }
     } catch (error) {
-      console.error('Error:', error);
-      setMessage('There was an error joining the waitlist. Please try again.');
+      console.error("Error:", error);
+      setMessage("There was an error joining the waitlist. Please try again.");
     }
   };
 
   return (
     <div className={styles.container}>
-      <Section images={imagesRight} headerText="After" headerClass={styles.headerYesterday} />
+      <Section
+        images={imagesRight}
+        headerText="After"
+        headerClass={styles.headerYesterday}
+      />
       <MidSection
         email={email}
         setEmail={setEmail}
         handleSubmit={handleSubmit}
         message={message}
       />
-      <Section images={imagesLeft} headerText="Before" headerClass={styles.headerTomorrow} />
+      <Section
+        images={imagesLeft}
+        headerText="Before"
+        headerClass={styles.headerTomorrow}
+      />
       <ToastContainer />
     </div>
   );
@@ -102,7 +113,8 @@ const MidSection = ({ email, setEmail, handleSubmit, message }) => (
   <div className={styles.midSection}>
     <h2 className={styles.headerToday}>Join our waitlist</h2>
     <p className={styles.description}>
-      Our analysis will help you manage your fashion looks better, and we will provide the best suitable products for you.
+      Our analysis will help you manage your fashion looks better, and we will
+      provide the best suitable products for you.
     </p>
     <form className={styles.form} onSubmit={handleSubmit}>
       <input
@@ -114,7 +126,9 @@ const MidSection = ({ email, setEmail, handleSubmit, message }) => (
         required
       />
       <div className={styles.buttonContainer}>
-        <button type="submit" className={styles.button}>Join our waitlist</button>
+        <button type="submit" className={styles.button}>
+          Join our waitlist
+        </button>
       </div>
     </form>
     {/* {message && <p className={styles.message}>{message}</p>} */}

@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navbar/Navbar";
 import { Footer } from "@/components/footer/Footer";
 import { ThemeContextProvider } from "@/context/ThemeContext";
 import ThemeProvider from "@/provider/ThemeProvider";
+import { UserProvider } from "@/context/UserContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <UserProvider>
         <ThemeContextProvider>
           <ThemeProvider>
             <div className="container">
@@ -27,6 +29,7 @@ export default function RootLayout({ children }) {
             </div>
           </ThemeProvider>
         </ThemeContextProvider>
+        </UserProvider>
       </body>
     </html>
   );

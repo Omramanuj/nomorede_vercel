@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import styles from './authPage.module.css'; // Import CSS module
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useUser } from '@/context/UserContext';
 
 const Authentication = () => {
   const [isLoginForm, setIsLoginForm] = useState(true);
@@ -17,7 +18,7 @@ const Authentication = () => {
     partner_id: '',
     language: '',
   });
-
+  const { login } = useUser();
   const languages = [
     "English",
     "Spanish",
@@ -55,8 +56,8 @@ const Authentication = () => {
     const { email, password, first_name, last_name, user_type, account_status, partner_id, language } = formData;
     const payload = isLoginForm
       ? { email, password }
-      : { first_name, last_name, user_type, email, account_status, password, partner_id, language };
-    
+      : { first_name, last_name, user_type: 'customer', email, account_status: null, password, partner_id: null, language };
+
     try {
       const response = await fetch(endpoint, {
         method: 'POST',
@@ -79,6 +80,7 @@ const Authentication = () => {
           language: '',
         });
         toast.success(result.message);
+        login(result.data.partner_id);
       } else {
         toast.error(result.message);
       }
@@ -111,36 +113,6 @@ const Authentication = () => {
                 type="text"
                 name="last_name"
                 value={formData.last_name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
-              <label>User Type</label>
-              <input
-                type="text"
-                name="user_type"
-                value={formData.user_type}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
-              <label>Account Status</label>
-              <input
-                type="text"
-                name="account_status"
-                value={formData.account_status}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
-              <label>Partner ID</label>
-              <input
-                type="text"
-                name="partner_id"
-                value={formData.partner_id}
                 onChange={handleChange}
                 required
               />
@@ -184,9 +156,9 @@ const Authentication = () => {
           />
         </div>
         <div className={styles.buttonContainer}>
-        <button type="submit" className={styles.button}>
-          {isLoginForm ? 'Login' : 'Sign Up'}
-        </button>
+          <button type="submit" className={styles.button}>
+            {isLoginForm ? 'Login' : 'Sign Up'}
+          </button>
         </div>
       </form>
       <p className={styles.toggle}>
