@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import styles from './authPage.module.css'; // Import CSS module
+import styles from './authPage.module.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useUser } from '@/context/UserContext';
@@ -20,26 +20,10 @@ const Authentication = () => {
   });
   const { login } = useUser();
   const languages = [
-    "English",
-    "Spanish",
-    "French",
-    "German",
-    "Italian",
-    "Chinese",
-    "Japanese",
-    "Korean",
-    "Arabic",
-    "Portuguese",
-    "Russian",
-    "Hindi",
-    "Bengali",
-    "Urdu",
-    "Punjabi",
-    "Tamil",
-    "Telugu",
-    "Malayalam",
-    "Marathi",
-    "Gujarati",
+    "English", "Spanish", "French", "German", "Italian", "Chinese",
+    "Japanese", "Korean", "Arabic", "Portuguese", "Russian",
+    "Hindi", "Bengali", "Urdu", "Punjabi", "Tamil", "Telugu",
+    "Malayalam", "Marathi", "Gujarati",
   ];
 
   const handleToggleForm = () => {
@@ -80,7 +64,10 @@ const Authentication = () => {
           language: '',
         });
         toast.success(result.message);
-        login(result.data.partner_id);
+        login(result.data.partner_id); // Assuming this updates the context/state indicating user is logged in
+        if (!isLoginForm) {
+          window.location.href = '/complete-profile'; // Redirect only after signup
+        }
       } else {
         toast.error(result.message);
       }

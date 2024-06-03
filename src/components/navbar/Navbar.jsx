@@ -26,7 +26,7 @@ export const Navbar = () => {
         <Link href="/contactUs" className={styles.link}>
           Contact
         </Link>
-        <Link href="/LogIn" className={styles.link}>
+        <Link href="/login" className={styles.link}>
           LogIn
         </Link>
         <AuthLinks />

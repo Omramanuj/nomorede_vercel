@@ -21,9 +21,16 @@ export async function POST(request) {
     if (!response.ok) {
       const error = await response.json();
       console.log('Response not ok:', response.status, error);
+      
       if (response.status === 422) {
         return NextResponse.json({ message: 'Validation Error', details: error.detail }, { status: 422 });
       }
+
+      // Handle specific MongoDB error related to `last_login`
+      if (error.errmsg && error.errmsg.includes("Cannot apply $addToSet to non-array field. Field named 'last_login' has non-array type null")) {
+        return NextResponse.json({ message: 'Internal Server Error: Issue with last_login field' }, { status: 500 });
+      }
+
       throw new Error(error.message || 'Failed to log in');
     }
 
@@ -31,6 +38,6 @@ export async function POST(request) {
     return NextResponse.json({ message: 'Login successful', data }, { status: 200 });
   } catch (error) {
     console.error('Error:', error);
-    return NextResponse.json({ message: `error : ${error}` }, { status: 500 });
+    return NextResponse.json({ message: `Internal Server Error: ${error.message}` }, { status: 500 });
   }
 }
