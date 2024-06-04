@@ -11,6 +11,7 @@ export async function POST(request) {
       password,
       partner_id,
       language,
+      last_login: []
     } = await request.json();
 
     // Basic validation (you can add more robust validation as needed)
@@ -32,6 +33,7 @@ export async function POST(request) {
         password,
         partner_id,
         language,
+        last_login: []
       }),
     });
 

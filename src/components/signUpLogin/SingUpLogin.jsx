@@ -1,5 +1,4 @@
-'use client';
-
+'use client'
 import React, { useState } from 'react';
 import styles from './authPage.module.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -39,8 +38,18 @@ const Authentication = () => {
     const endpoint = isLoginForm ? '/api/login' : '/api/signup';
     const { email, password, first_name, last_name, user_type, account_status, partner_id, language } = formData;
     const payload = isLoginForm
-      ? { email, password }
-      : { first_name, last_name, user_type: 'customer', email, account_status: null, password, partner_id: null, language };
+      ? { email, password  }
+      : {
+        first_name,
+        last_name,
+        user_type: 'customer',
+        email,
+        account_status: 'active',  // Assuming default account status on signup
+        password,
+        partner_id: '',  // Assuming default partner ID if needed
+        language,
+        last_login: []// Adding an empty array for last_login during signup
+      };
 
     try {
       const response = await fetch(endpoint, {

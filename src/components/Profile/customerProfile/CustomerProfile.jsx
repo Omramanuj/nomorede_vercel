@@ -49,7 +49,7 @@ const CustomerProfile = () => {
         <h1 className={styles.title}>Profile Page</h1>
         {userDetails ? (
           <div className={styles.profileDetails}>
-            <img src={userDetails.profilePicture || '/default-profile.png'} alt="Profile" className={styles.profilePicture} />
+            <img src={userDetails.profile_picture } alt="Profile" className={styles.profilePicture} />
             <div className={styles.info}>
               <p><strong>Partner ID:</strong> {partnerId}</p>
               <p><strong>First Name:</strong> {userDetails.first_name}</p>

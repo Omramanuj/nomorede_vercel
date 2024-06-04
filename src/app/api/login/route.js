@@ -3,34 +3,37 @@ import { NextResponse } from 'next/server';
 export async function POST(request) {
   try {
     const { email, password } = await request.json();
-    console.log('Received request:', { email, password });
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple regex for email validation
 
-    if (!email || !email.includes('@') || !password) {
+    if (!email || !emailRegex.test(email) || !password) {
       console.log('Invalid email or password');
       return NextResponse.json({ message: 'Invalid email or password' }, { status: 400 });
     }
+
+    // Include last_login as an empty array in the payload sent to the backend
+    const payload = {
+      email,
+      password,
+      last_login: []  // Initialize last_login as an empty array
+    };
 
     const response = await fetch('https://nomorede-backend-wxlxpjor2a-el.a.run.app/user/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify(payload),
     });
 
     if (!response.ok) {
       const error = await response.json();
       console.log('Response not ok:', response.status, error);
-      
+
       if (response.status === 422) {
         return NextResponse.json({ message: 'Validation Error', details: error.detail }, { status: 422 });
       }
 
-      // Handle specific MongoDB error related to `last_login`
-      if (error.errmsg && error.errmsg.includes("Cannot apply $addToSet to non-array field. Field named 'last_login' has non-array type null")) {
-        return NextResponse.json({ message: 'Internal Server Error: Issue with last_login field' }, { status: 500 });
-      }
-
+      // Since last_login initialization is now explicitly handled, no need for specific MongoDB error check
       throw new Error(error.message || 'Failed to log in');
     }
 
