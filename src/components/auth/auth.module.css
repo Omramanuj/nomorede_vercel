@@ -27,7 +27,7 @@
 }
 
 .headerYesterday, .headerTomorrow {
-  padding: 40px;
+  padding: 20px;
   font-weight: 700;
   color: var(--softTextColor);
   pointer-events: none;

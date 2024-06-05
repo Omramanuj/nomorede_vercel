@@ -23,8 +23,8 @@ const CompleteProfile = () => {
         mobile_number: '',
         gender: '',
         DOB: '',
-        care_data: '',
-        style_data: '',
+        care_data: null,
+        style_data: null,
         updated_at: new Date().toISOString()
     });
 
@@ -133,13 +133,7 @@ const CompleteProfile = () => {
                 return (
                     <div>
                         <label>Date of Birth:
-                            <input type="date" className={styles.inputField} name="DOB" value={profileData.DOB} onChange={handleChange} />
-                        </label>
-                        <label>Care Data:
-                            <input type="text" className={styles.inputField} name="care_data" value={profileData.care_data} onChange={handleChange} />
-                        </label>
-                        <label>Style Data:
-                            <input type="text" className={styles.inputField} name="style_data" value={profileData.style_data} onChange={handleChange} />
+                            <input type="date" className={`${styles.inputField} ${styles.dateInput}`} name="DOB" value={profileData.DOB} onChange={handleChange} />
                         </label>
                     </div>
                 );
@@ -150,11 +144,6 @@ const CompleteProfile = () => {
 
     return (
         <div className={styles.formContainer}>
-            <div className={styles.stepIndicator}>
-                {[1, 2, 3].map(step => (
-                    <div key={step} className={`${styles.stepCircle} ${currentStep === step ? styles.active : ''}`}>{step}</div>
-                ))}
-            </div>
             <div className={styles.formCard}>
                 <form onSubmit={handleSubmit}>
                     {renderStepContent(currentStep)}
@@ -167,6 +156,13 @@ const CompleteProfile = () => {
                         </button>
                     </div>
                 </form>
+            </div>
+            <div className={styles.stepIndicatorContainer}>
+                <div className={styles.stepIndicator}>
+                    {[1, 2, 3].map(step => (
+                        <div key={step} className={`${styles.stepCircle} ${currentStep === step ? styles.active : ''}`}>{step}</div>
+                    ))}
+                </div>
             </div>
             <ToastContainer className={styles.toastContainer} />
         </div>
