@@ -1,7 +1,8 @@
-'use client'
+"use client"
 
 import React from 'react';
 import { useUser } from '../../context/UserContext';
+import withAuth from '../../auth/withAuth';
 
 const Profile = () => {
   const { partnerId } = useUser();
@@ -18,4 +19,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default withAuth(Profile);
