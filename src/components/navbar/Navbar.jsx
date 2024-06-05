@@ -46,6 +46,8 @@ export const Navbar = () => {
             LogIn
           </Link>
         )}
+       
+
         <AuthLinks />
       </div>
     </div>

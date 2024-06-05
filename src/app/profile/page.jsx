@@ -7,13 +7,13 @@ import withAuth from '../../auth/withAuth';
 
 
 const Profile = () => {
-  const { partnerId } = useUser();
+  const { partnerId,logout } = useUser();
 
   return (
     <div>
      
-
       <CustomerProfile/>
+      <button onClick={logout}>Log out</button>
     </div>
   );
 };
