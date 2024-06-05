@@ -33,7 +33,7 @@ const ImageList = ({ images }) => (
       <div
         key={index}
         className={styles.imageWrapper}
-        style={{ zIndex: 7 - index, animationDelay: `${index * 1}s` }}
+        style={{ zIndex: 7 - index, animationDelay: `${index * 0.5}s` }}
       >
         <Image
           src={image.src}

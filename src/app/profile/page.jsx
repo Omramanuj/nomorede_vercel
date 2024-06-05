@@ -13,7 +13,7 @@ const Profile = () => {
     <div>
      
       <CustomerProfile/>
-      <button onClick={logout}>Log out</button>
+      
     </div>
   );
 };

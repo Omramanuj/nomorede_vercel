@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-
-
 .container {
   display: flex;
   align-items: center;
@@ -73,24 +71,24 @@
 
 .imageWrapper:nth-child(odd) {
   transform: rotate(-5deg) translateY(10px);
-  animation: moveOutLeftTilt 18s infinite;
+  animation: moveOutLeftTilt 14s infinite;
 }
 
 .imageWrapper:nth-child(even) {
   transform: rotate(5deg) translateY(20px);
-  animation: moveOutRightTilt 18s infinite;
+  animation: moveOutRightTilt 14s infinite;
 }
 
 @keyframes moveOutLeftTilt {
-  0%, 20% { transform: rotate(-5deg) translateY(10px); opacity: 1; }
-  20%, 80% { transform: rotate(-5deg) translateY(-150%); opacity: 0; }
-  80%, 100% { transform: rotate(-5deg) translateY(10px); opacity: 1; }
+  0%, 40% { transform: rotate(-5deg) translateY(10px); opacity: 1; }
+  40%, 70% { transform: rotate(-5deg) translateY(-150%); opacity: 0; }
+  70%, 100% { transform: rotate(-5deg) translateY(10px); opacity: 1; }
 }
 
 @keyframes moveOutRightTilt {
-  0%, 20% { transform: rotate(5deg) translateY(20px); opacity: 1; }
-  20%, 80% { transform: rotate(5deg) translateY(-150%); opacity: 0; }
-  80%, 100% { transform: rotate(5deg) translateY(20px); opacity: 1; }
+  0%, 40% { transform: rotate(5deg) translateY(20px); opacity: 1; }
+  40%, 70% { transform: rotate(5deg) translateY(-150%); opacity: 0; }
+  70%, 100% { transform: rotate(5deg) translateY(20px); opacity: 1; }
 }
 
 .form {
@@ -157,7 +155,6 @@
     font-size: 16px;
   }
 }
-                
 
 @media (max-width: 820px) and (max-height: 1180px), (max-width: 768px) {
   .headerYesterday, .headerTomorrow, .imageContainer {
@@ -192,6 +189,7 @@
     font-size: 16px;
   }
 }
+
 @media (max-width: 480px) {
   .headerYesterday, .headerTomorrow, .imageContainer {
     display: none;
