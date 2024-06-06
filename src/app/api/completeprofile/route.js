@@ -5,7 +5,8 @@ export async function POST(request) {
         const data = await request.json();
         console.log('Received data:', data);  // Log the received data for debugging
 
-        const apiUrl = 'https://nomorede-backend-wxlxpjor2a-el.a.run.app/user/customer/completeProfile';
+        // Use the environment variable for the backend URL
+        const apiUrl = `${process.env.backend_url}/user/customer/completeProfile`;
 
         const response = await fetch(apiUrl, {
             method: 'POST',

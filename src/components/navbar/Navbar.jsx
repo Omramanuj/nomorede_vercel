@@ -31,21 +31,21 @@ export const Navbar = () => {
       </div>
       <div className={styles.links}>
         <ThemeToggle />
-        {/* <Link href="/Home" className={styles.link}>
+        <span href="/Home" className={styles.link}>
           Homepage
-        </Link> */}
+        </span>
         <Link href="/contactUs" className={styles.link}>
           Contact
         </Link>
-        {/* {partnerId ? (
-          <Link href="/profile" className={styles.link}>
+        {partnerId ? (
+          <span href="/profile" className={styles.link}>
             Profile
-          </Link>
+          </span>
         ) : (
-          <Link href="/LogIn" className={styles.link}>
+          <span href="/LogIn" className={styles.link}>
             LogIn
-          </Link>
-        )} */}
+          </span>
+        )}
        
 
         <AuthLinks />

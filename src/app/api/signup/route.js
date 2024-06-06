@@ -19,7 +19,10 @@ export async function POST(request) {
       return NextResponse.json({ message: 'Invalid email or password' }, { status: 400 });
     }
 
-    const response = await fetch('https://nomorede-backend-wxlxpjor2a-el.a.run.app/user/signup', {
+    // Use the environment variable for the backend URL
+    const backendUrl = process.env.backend_url + 'user/signup';
+
+    const response = await fetch(backendUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -28,15 +28,18 @@
   margin-bottom: 20px;
 }
 
+
 .contactDetails {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  
 }
 
 .contactDetails div {
   margin: 10px;
   max-width: 300px;
+  padding: 20px;
 }
 
 .contactContainer {

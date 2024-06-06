@@ -17,7 +17,10 @@ export async function POST(request) {
       last_login: []  // Initialize last_login as an empty array
     };
 
-    const response = await fetch('https://nomorede-backend-wxlxpjor2a-el.a.run.app/user/login', {
+    // Use the environment variable for the backend URL
+    const backendUrl = `${process.env.backend_url}user/login`;
+
+    const response = await fetch(backendUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -33,7 +36,6 @@ export async function POST(request) {
         return NextResponse.json({ message: 'Validation Error', details: error.detail }, { status: 422 });
       }
 
-      // Since last_login initialization is now explicitly handled, no need for specific MongoDB error check
       throw new Error(error.message || 'Failed to log in');
     }
 

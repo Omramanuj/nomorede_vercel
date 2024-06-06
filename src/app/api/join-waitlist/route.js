@@ -2,18 +2,21 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request) {
   try {
-    const {name,email,message } = await request.json();
+    const { name, email, message } = await request.json();
 
     if (!email || !email.includes('@')) {
       return NextResponse.json({ message: 'Invalid email address' }, { status: 400 });
     }
 
-    const response = await fetch('https://nomorede-backend-wxlxpjor2a-el.a.run.app/customer/waitlist ', {
+    // Use the environment variable for the backend URL
+    const backendUrl = `${process.env.backend_url}customer/waitlist`;
+
+    const response = await fetch(backendUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ name,email,message }),
+      body: JSON.stringify({ name, email, message }),
     });
 
     if (!response.ok) {

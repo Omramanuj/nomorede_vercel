@@ -38,7 +38,7 @@
 .headerYesterday, .headerTomorrow {
   padding: 20px;
   font-weight: 700;
-  color: var(--softTextColor);
+  color: var(--textColor);
   pointer-events: none;
   user-select: none;
 }
@@ -54,7 +54,7 @@
   font-size: 15px;
   margin-bottom: 20px;
   line-height: 1.6;
-  color: var(--softTextColor);
+  color: var(--textColor);
 }
 
 .imageContainer {
