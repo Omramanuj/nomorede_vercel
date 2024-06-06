@@ -16,6 +16,7 @@
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: "Lora", serif;
 }
 
 a {
@@ -25,7 +26,7 @@ a {
 
 .dark {
   --bg: #000000;
-  --textColor: #ddd;
+  --textColor: #e4e4e4;
   --softBg: #505050;
   --softTextColor: #a6a6a6;
 }
@@ -49,6 +50,9 @@ a {
   margin-right: auto;
   padding-left: 100px;
   padding-right: 100px;
+}
+.childComponents{
+  overflow-y: visible;
 }
 
 .content{

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Featured } from "@/components/featured/Featured";
 import styles from "./homepage.module.css";
@@ -12,23 +12,22 @@ import withAuth from "../../auth/withAuth";
 const Home = () => {
   return (
     <>
-    <div className={styles.container}>
-    <div className={styles.midSection}>
-      <div className={styles.content}>
-        <div className={styles.left}>
-          <Featured />
-          <CategoryList />
-          <CardList />
+      <div className={styles.container}>
+        <div className={styles.midSection}>
+          <div className={styles.content}>
+            <div className={styles.left}>
+              <Featured />
+              <CategoryList />
+              <CardList />
+            </div>
+              <Menu />
+            
+          </div>
         </div>
-
-        <Menu />
+        <Footer />
       </div>
-    </div>
-    <Footer />
-  </div>
-  </>
-  )
-}
+    </>
+  );
+};
 
-export default  withAuth(Home);
-
+export default withAuth(Home);

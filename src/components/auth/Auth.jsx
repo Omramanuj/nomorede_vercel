@@ -6,7 +6,6 @@ import styles from "./auth.module.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 const imagesRight = [
   { src: "/right/lleft.png", alt: "Mercury OS" },
   { src: "/right/Right1.jpeg", alt: "Another image" },
@@ -83,7 +82,7 @@ const Auth = () => {
     <div className={styles.container}>
       <Section
         images={imagesRight}
-        headerText="After"
+        headerText="AFTER"
         headerClass={styles.headerYesterday}
       />
       <MidSection
@@ -94,7 +93,7 @@ const Auth = () => {
       />
       <Section
         images={imagesLeft}
-        headerText="Before"
+        headerText="BEFORE"
         headerClass={styles.headerTomorrow}
       />
       <ToastContainer />
@@ -111,10 +110,13 @@ const Section = ({ images, headerText, headerClass }) => (
 
 const MidSection = ({ email, setEmail, handleSubmit, message }) => (
   <div className={styles.midSection}>
-    <h2 className={styles.headerToday}>Join our waitlist</h2>
+    <h2 className={styles.headerToday}>STYLE - THE NEW YOU</h2>
     <p className={styles.description}>
       Our analysis will help you manage your fashion looks better, and we will
-       provide the best suitable products for you.
+      provide the best suitable products for you.
+    </p>
+    <p className={styles.description}>
+      Signup for Early-Bird Discounts and create your science-backed style!
     </p>
     <form className={styles.form} onSubmit={handleSubmit}>
       <input

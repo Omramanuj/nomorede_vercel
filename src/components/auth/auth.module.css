@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 .container {
   display: flex;
@@ -12,6 +14,7 @@
   color: var(--textColor);
   overflow: hidden;
   flex: auto;
+  font-family: "Lora", serif;
 }
 
 .section, .midSection {
@@ -26,6 +29,8 @@
 
 .midSection {
   margin-right: 10px;
+  text-align: justify;
+  font-family: "Lora", serif;
 }
 
 .headerYesterday, .headerTomorrow {
@@ -37,16 +42,15 @@
 }
 
 .headerToday {
-  font-size: 36px;
-  font-weight: 300;
+  font-size: 25px;
+  font-weight: bold;
   margin-bottom: 20px;
-  color: var(--softTextColor);
+  color: var(--textColor);
 }
 
 .description {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 30px;
+  font-size: 15px;
+  margin-bottom: 20px;
   line-height: 1.6;
   color: var(--softTextColor);
 }

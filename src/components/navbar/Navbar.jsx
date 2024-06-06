@@ -31,13 +31,13 @@ export const Navbar = () => {
       </div>
       <div className={styles.links}>
         <ThemeToggle />
-        <Link href="/Home" className={styles.link}>
+        {/* <Link href="/Home" className={styles.link}>
           Homepage
-        </Link>
+        </Link> */}
         <Link href="/contactUs" className={styles.link}>
           Contact
         </Link>
-        {partnerId ? (
+        {/* {partnerId ? (
           <Link href="/profile" className={styles.link}>
             Profile
           </Link>
@@ -45,7 +45,7 @@ export const Navbar = () => {
           <Link href="/LogIn" className={styles.link}>
             LogIn
           </Link>
-        )}
+        )} */}
        
 
         <AuthLinks />
