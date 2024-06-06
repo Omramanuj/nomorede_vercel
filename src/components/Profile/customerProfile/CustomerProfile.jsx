@@ -2,13 +2,45 @@
 
 import React, { useState, useEffect } from 'react';
 import { useUser } from '@/context/UserContext';
+import { useRouter } from 'next/navigation';
 import styles from './customerProfile.module.css';
 
+const ProfileDetail = ({ label, value, isPrimary }) => (
+  <div className={styles.detailItem}>
+    <span><strong>{label}:</strong> {value}</span>
+    {isPrimary && <span className={styles.primaryLabel}>Primary</span>}
+  </div>
+);
+
+const ProfileDetails = ({ details, onLogout, onEditProfile }) => (
+  <div className={styles.detailsContainer}>
+    <div className={styles.profileHeader}>
+      <div className={styles.profilePictureContainer}>
+        <img src={details.profile_picture} alt="Profile" className={styles.profilePicture} />
+        {details.account_status === 'active_account' && (
+          <div className={styles.activeStatus}></div>
+        )}
+      </div>
+      <div className={styles.profileInfo}>
+        <h2 className={styles.profileName}>{`${details.first_name} ${details.last_name}`}</h2>
+        <button className={styles.editButton} onClick={onEditProfile}>Edit profile</button>
+      </div>
+    </div>
+    <ProfileDetail label="User Type" value={details.user_type} />
+    <ProfileDetail label="Language" value={details.language} />
+    <ProfileDetail label="Account Status" value={details.account_status} />
+    <ProfileDetail label="Email" value={details.email} />
+    <ProfileDetail label="Mobile Number" value={details.mobile_number} />
+    <button className={styles.logoutButton} onClick={onLogout}>Logout</button>
+  </div>
+);
+
 const CustomerProfile = () => {
-  const { partnerId } = useUser();
+  const { partnerId, logout } = useUser();
   const [userDetails, setUserDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchUserDetails = async () => {
@@ -35,6 +67,14 @@ const CustomerProfile = () => {
     }
   }, [partnerId]);
 
+  const handleLogout = () => {
+    logout(); // Call the logout function from the context
+  };
+
+  const handleEditProfile = () => {
+    router.push('/complete-profile'); // Redirect to complete-profile page
+  };
+
   if (loading) {
     return <div className={styles.pageContainer}>Loading...</div>;
   }
@@ -46,20 +86,13 @@ const CustomerProfile = () => {
   return (
     <div className={styles.pageContainer}>
       <div className={styles.profileContainer}>
-        <h1 className={styles.title}>Profile Page</h1>
+        <h1 className={styles.title}>Profile details</h1>
         {userDetails ? (
-          <div className={styles.profileDetails}>
-            <img src={userDetails.profile_picture } alt="Profile" className={styles.profilePicture} />
-            <div className={styles.info}>
-              <p><strong>Partner ID:</strong> {partnerId}</p>
-              <p><strong>First Name:</strong> {userDetails.first_name}</p>
-              <p><strong>Last Name:</strong> {userDetails.last_name}</p>
-              <p><strong>Email:</strong> {userDetails.email}</p>
-              <p><strong>Language:</strong> {userDetails.language}</p>
-              <p><strong>Account Status:</strong> {userDetails.account_status}</p>
-              <button className={styles.editButton}>Edit Profile</button>
-            </div>
-          </div>
+          <ProfileDetails 
+            details={userDetails} 
+            onLogout={handleLogout} 
+            onEditProfile={handleEditProfile} 
+          />
         ) : (
           <p>No user details found. Please log in to see your profile.</p>
         )}
