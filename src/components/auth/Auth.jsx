@@ -7,42 +7,30 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const imagesRight = [
-  { src: "/right/lleft.png", alt: "Mercury OS" },
-  { src: "/right/Right1.jpeg", alt: "Image 1" },
-  { src: "/right/Right2.jpeg", alt: "Image 2" },
-  { src: "/right/Right3.jpeg", alt: "Image 3" },
-  { src: "/right/Right4.jpeg", alt: "Image 4" },
-  { src: "/right/Right7.jpeg", alt: "Image 5" },
-  { src: "/right/Right5.jpeg", alt: "Image 6" },
+  { src: "https://storage.googleapis.com/nomorede-frontend/right/lleft.png", alt: "Mercury OS" },
+  { src: "https://storage.googleapis.com/nomorede-frontend/right/RIGHT1.jpeg", alt: "Image 1" },
+  { src: "https://storage.googleapis.com/nomorede-frontend/right/RIGHT2.jpeg", alt: "Image 2" },
+  { src: "https://storage.googleapis.com/nomorede-frontend/right/RIGHT3.jpeg", alt: "Image 3" },
+  { src: "https://storage.googleapis.com/nomorede-frontend/right/RIGHT4.jpeg", alt: "Image 4" },
+  { src: "https://storage.googleapis.com/nomorede-frontend/right/RIGHT7.jpeg", alt: "Image 5" },
+  { src: "https://storage.googleapis.com/nomorede-frontend/right/RIGHT5.jpeg", alt: "Image 6" },
 ];
 
 const imagesLeft = [
-  { src: "/left/Lefrt2.jpeg", alt: "Worlds" },
-  { src: "/left/left.png", alt: "Image 1" },
-  { src: "/left/left(1).png", alt: "Image 2" },
-  { src: "/left/Left1.jpeg", alt: "Image 3" },
-  { src: "/left/left4.jpeg", alt: "Image 4" },
-  { src: "/left/left3.jpeg", alt: "Image 5" },
-  { src: "/left/left5.jpeg", alt: "Image 6" },
+  { src: "https://storage.googleapis.com/nomorede-frontend/left/Left1.jpeg", alt: "Worlds" },
+  { src: "https://storage.googleapis.com/nomorede-frontend/left/left.png", alt: "Image 1" },
+  { src: "https://storage.googleapis.com/nomorede-frontend/left/left(1).png", alt: "Image 2" },
+  { src: "https://storage.googleapis.com/nomorede-frontend/left/Left1.jpeg", alt: "Image 3" },
+  { src: "https://storage.googleapis.com/nomorede-frontend/left/left4.jpeg", alt: "Image 4" },
+  { src: "https://storage.googleapis.com/nomorede-frontend/left/left3.jpeg", alt: "Image 5" },
+  { src: "https://storage.googleapis.com/nomorede-frontend/left/left5.jpeg", alt: "Image 6" },
 ];
 
 const ImageList = ({ images }) => {
-  const [loaded, setLoaded] = useState(false);
-  const [loadCount, setLoadCount] = useState(0);
-
-  useEffect(() => {
-    if (loadCount === images.length) {
-      setLoaded(true);
-    }
-  }, [loadCount, images.length]);
-
-  const handleImageLoad = () => {
-    setLoadCount((prevCount) => prevCount + 1);
-  };
 
   return (
     <div className={styles.imageContainer}>
-      {!loaded && <div className={styles.loader}>Loading...</div>}
+
       {images.map((image, index) => (
         <div
           key={index}
@@ -55,7 +43,7 @@ const ImageList = ({ images }) => {
             layout="fill"
             objectFit="cover"
             className={styles.image}
-            onLoad={handleImageLoad}
+        
           />
         </div>
       ))}

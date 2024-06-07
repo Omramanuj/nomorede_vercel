@@ -79,23 +79,23 @@
 
 .imageWrapper:nth-child(odd) {
   transform: rotate(-5deg) translateY(10px);
-  animation: moveOutLeftTilt 14s infinite;
+  animation: moveOutLeftTilt 10s infinite;
 }
 
 .imageWrapper:nth-child(even) {
   transform: rotate(5deg) translateY(20px);
-  animation: moveOutRightTilt 14s infinite;
+  animation: moveOutRightTilt 10s infinite;
 }
 
 @keyframes moveOutLeftTilt {
   0%, 40% { transform: rotate(-5deg) translateY(10px); opacity: 1; }
-  40%, 70% { transform: rotate(-5deg) translateY(-150%); opacity: 0; }
+  40%, 70% { transform: rotate(-5deg) translateY(-200%); opacity: 1; }
   70%, 100% { transform: rotate(-5deg) translateY(10px); opacity: 1; }
 }
 
 @keyframes moveOutRightTilt {
   0%, 40% { transform: rotate(5deg) translateY(20px); opacity: 1; }
-  40%, 70% { transform: rotate(5deg) translateY(-150%); opacity: 0; }
+  40%, 70% { transform: rotate(5deg) translateY(-200%); opacity: 1; }
   70%, 100% { transform: rotate(5deg) translateY(20px); opacity: 1; }
 }
 
