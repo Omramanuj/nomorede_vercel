@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./auth.module.css";
 import { ToastContainer, toast } from "react-toastify";
@@ -8,43 +8,60 @@ import "react-toastify/dist/ReactToastify.css";
 
 const imagesRight = [
   { src: "/right/lleft.png", alt: "Mercury OS" },
-  { src: "/right/Right1.jpeg", alt: "Another image" },
-  { src: "/right/Right2.jpeg", alt: "Another image" },
-  { src: "/right/Right3.jpeg", alt: "Another image" },
-  { src: "/right/Right4.jpeg", alt: "Another image" },
-  { src: "/right/Right7.jpeg", alt: "Another image" },
-  { src: "/right/Right5.jpeg", alt: "Another image" },
+  { src: "/right/Right1.jpeg", alt: "Image 1" },
+  { src: "/right/Right2.jpeg", alt: "Image 2" },
+  { src: "/right/Right3.jpeg", alt: "Image 3" },
+  { src: "/right/Right4.jpeg", alt: "Image 4" },
+  { src: "/right/Right7.jpeg", alt: "Image 5" },
+  { src: "/right/Right5.jpeg", alt: "Image 6" },
 ];
 
 const imagesLeft = [
   { src: "/left/Lefrt2.jpeg", alt: "Worlds" },
-  { src: "/left/left.png", alt: "Another image" },
-  { src: "/left/left(1).png", alt: "Another image" },
-  { src: "/left/Left1.jpeg", alt: "Another image" },
-  { src: "/left/left4.jpeg", alt: "Another image" },
-  { src: "/left/left3.jpeg", alt: "Another image" },
-  { src: "/left/left5.jpeg", alt: "Another image" },
+  { src: "/left/left.png", alt: "Image 1" },
+  { src: "/left/left(1).png", alt: "Image 2" },
+  { src: "/left/Left1.jpeg", alt: "Image 3" },
+  { src: "/left/left4.jpeg", alt: "Image 4" },
+  { src: "/left/left3.jpeg", alt: "Image 5" },
+  { src: "/left/left5.jpeg", alt: "Image 6" },
 ];
 
-const ImageList = ({ images }) => (
-  <div className={styles.imageContainer}>
-    {images.map((image, index) => (
-      <div
-        key={index}
-        className={styles.imageWrapper}
-        style={{ zIndex: 7 - index, animationDelay: `${index * 0.5}s` }}
-      >
-        <Image
-          src={image.src}
-          alt={image.alt}
-          layout="fill"
-          objectFit="cover"
-          className={styles.image}
-        />
-      </div>
-    ))}
-  </div>
-);
+const ImageList = ({ images }) => {
+  const [loaded, setLoaded] = useState(false);
+  const [loadCount, setLoadCount] = useState(0);
+
+  useEffect(() => {
+    if (loadCount === images.length) {
+      setLoaded(true);
+    }
+  }, [loadCount, images.length]);
+
+  const handleImageLoad = () => {
+    setLoadCount((prevCount) => prevCount + 1);
+  };
+
+  return (
+    <div className={styles.imageContainer}>
+      {!loaded && <div className={styles.loader}>Loading...</div>}
+      {images.map((image, index) => (
+        <div
+          key={index}
+          className={styles.imageWrapper}
+          style={{ zIndex: 7 - index, animationDelay: `${index * 0.5}s` }}
+        >
+          <Image
+            src={image.src}
+            alt={image.alt}
+            layout="fill"
+            objectFit="cover"
+            className={styles.image}
+            onLoad={handleImageLoad}
+          />
+        </div>
+      ))}
+    </div>
+  );
+};
 
 const Auth = () => {
   const [email, setEmail] = useState("");
