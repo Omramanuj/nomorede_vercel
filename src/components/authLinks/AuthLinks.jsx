@@ -31,21 +31,10 @@ export const AuthLinks = () => {
             {open && (
                 <div className={styles.responsiveMenu}>
                     <div className={styles.closeButton} onClick={closeMenu}>X</div>
-                    <Link href="/" className={styles.responsiveLink} onClick={closeMenu}>Homepage</Link>
-                    <Link href="/about" className={styles.responsiveLink} onClick={closeMenu}>About</Link>
-                    <Link href="/contact" className={styles.responsiveLink} onClick={closeMenu}>Contact</Link>
-                    {status === "notauthenticated" ? (
-                        <Link href="/login" onClick={closeMenu}>
-                            <button className={styles.responsiveButton}>
-                                + Join Waitlist
-                            </button>
-                        </Link>
-                    ) : (
-                        <>
-                            <Link href="/write" className={styles.responsiveLink} onClick={closeMenu}>Write</Link>
-                            <span className={styles.responsiveLink} onClick={closeMenu}>Logout</span>
-                        </>
-                    )}
+                    <Link href="/Home" className={styles.responsiveLink} onClick={closeMenu}>Homepage</Link>
+                    <Link href="/contactUs" className={styles.responsiveLink} onClick={closeMenu}>Contact</Link>
+                    <Link href="/LogIn" className={styles.responsiveLink} onClick={closeMenu}>LogIn</Link>
+                    <Link href="/joinWaitlist" className={styles.responsiveLink} onClick={closeMenu}>Join Waitlist</Link>
                 </div>
             )}
         </div>
